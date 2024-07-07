@@ -1,0 +1,195 @@
+// Task-2
+
+//  TEMPERATURE CONVERTER 
+
+/*
+
+ Create a program that converts temperatures between Celsius,
+Fahrenheit, and Kelvin. The program should allow the user to
+input a temperature in one scale and output the converted
+temperature in another scale
+
+*/
+
+#include<iostream>
+using namespace std;
+
+
+// celsius to fahrenheit
+double CelsFahr(double C)
+{
+    double F;
+    F=(1.8 * C) +32.0 ;
+
+    cout<<"Temperature in Fahrenheit is ";
+    return F;
+}
+
+// fahrenheit to celsius
+
+double FahrCels(double F)
+{
+    double C;
+    C=(F-32)/1.8;
+
+    cout<<"Temperature in Celsius is ";
+    return C;
+}
+
+// Celsius to Kelvin
+
+double CelsKelv(double C)
+{
+    double K;
+    K=C + 273.15;
+
+    cout<<"Temperature in Kelvin is ";
+    return K;
+}
+
+// Kelvin to Celsius
+
+double KelvCels(double K)
+{
+    double C;
+    C= K-273.15;
+
+    cout<<"Temperature in Celsius is ";
+    return C;
+}
+
+// Kelvin to Fahrenheit
+
+double KelvFahr(double K)
+{
+    double F;
+    F=(1.8 * (K-273.15))+32.0 ;
+
+    cout<<"Temperature in Fahrenheit is ";
+    return F;
+}
+
+// Fahrenheit to Kelvin
+
+double FahrKelv(double F)
+{
+    double K;
+    K=(F-32)/1.8 +273.15;
+
+    cout<<"Temperature in Kelvin is ";
+    return K;
+}
+
+void fun()
+{
+    double F, C,K;
+    int choice;
+    cout<<"\nMake your choice which temperature conversion you want to do . \n\n";
+
+    cout<<" 1. Celsius to Fahrenheit."<<endl;
+    cout<<" 2. Fahrenheit to Celsius."<<endl;
+    cout<<" 3. Celsius to Kelvin."<<endl;
+    cout<<" 4. Kelvin to Celsius."<<endl;
+    cout<<" 5. Kelvin to Fahrenheit."<<endl;
+    cout<<" 6. Fahrenheit to Kelvin.\n\n"<<endl;
+    
+    cout<<"Choose one from the above options 1, 2, 3, 4, 5 or 6 "<<endl;
+    cin>>choice;
+
+    switch(choice)
+    {
+        case 1:
+           {
+            cout<<"Enter the temperature in Celsius : ";
+            cin>>C;
+            
+            cout<<CelsFahr(C)<<endl;
+
+           }
+
+           break;
+
+
+        case 2:
+           {
+            cout<<"Enter the temperature in fahrenheit : ";
+            cin>>F;
+            cout<<FahrCels(F)<<endl;;
+           }
+
+           break;
+
+        case 3:
+           {
+            cout<<"Enter the temperature in Celsius : ";
+            cin>>C;
+            cout<<CelsKelv(C)<<endl;
+           }
+
+           break;
+
+        case 4:
+           {
+            cout<<"Enter the temperature in Kelvin : ";
+            cin>>K;
+            cout<<KelvCels(K)<<endl;
+           }
+
+           break;
+
+
+        case 5:
+           {
+            cout<<"Enter the temperature in Kelvin : ";
+            cin>>K;
+            cout<<KelvFahr(K)<<endl;
+           }
+
+           break;
+
+
+        case 6:
+           {
+            cout<<"Enter the temperature in Fahrenheit : ";
+            cin>>F;
+            cout<<FahrKelv(F)<<endl;
+           }
+
+           break;
+
+        default:
+        {
+           cout<<"Please make correct choice by choosing options 1,2 3,4,5 or 6"<<endl;
+           fun();
+        }
+           
+    }
+
+}
+
+
+
+
+int main()
+{
+    fun();
+
+    char MoreConv;
+    cout<<"Do you want to do more temperature conversion(y/n) ? \n ";
+    cin>>MoreConv;
+
+    if(MoreConv=='y' || MoreConv=='Y')
+    {
+        fun();
+    }
+    else 
+    {
+        cout<<"Thank You for  using this temperature converter !"<<endl;
+        return 0;
+    }
+
+
+    main();
+
+    return 0;
+}
